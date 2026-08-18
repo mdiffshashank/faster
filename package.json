@@ -1,6 +1,6 @@
 {
   "name": "@mdiffshashank/faster-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Faster design system — production-ready, accessible React component library",
   "type": "module",
   "main": "./dist/faster.cjs.js",
