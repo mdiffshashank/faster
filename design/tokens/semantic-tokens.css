@@ -1,0 +1,86 @@
+/* Semantic tokens aliased from Figma-derived primary tokens */
+
+/* ─── Light theme (default) ─────────────────────────────────── */
+:root {
+  /* Brand */
+  --color-bg-primary:        var(--primary-600);      /* #15C5CE */
+  --color-bg-primary-hover:  var(--primary-500);      /* #47CFD6 */
+  --color-bg-primary-pressed:var(--primary-700);      /* #00ABB6 */
+  --color-bg-primary-subtle: var(--primary-100);      /* #EEFCFC */
+
+  /* Surfaces */
+  --color-bg-surface:        var(--neutral-white);    /* #FFFFFF */
+  --color-bg-surface-muted:  var(--neutral-50);       /* #FAFAFA */
+
+  /* Text / Content */
+  --color-text-primary:      var(--neutral-700);      /* #1F1F1F */
+  --color-text-secondary:    var(--neutral-600);      /* #4B4B4B */
+  --color-text-inverse:      var(--black-white-white);/* #FFFFFF */
+
+  /* Borders / Strokes */
+  --color-border-subtle:     var(--neutral-300);      /* #E1E1E1 */
+  --color-border-strong:     var(--neutral-400);      /* #CACACA */
+
+  /* Feedback / Status */
+  --color-feedback-danger:   var(--danger-600);       /* #F64C4C */
+  --color-feedback-info:     var(--info-600);         /* #3B82F6 */
+  --color-feedback-success:  var(--success-600);      /* #47B881 */
+  --color-feedback-warning:  var(--warning-600);      /* #FFAD0D */
+
+  /* Disabled states */
+  --color-disabled-bg:       var(--neutral-100);      /* #F5F5F5 */
+  --color-disabled-text:     var(--neutral-500);      /* #8E8E8E */
+  --color-disabled-border:   var(--neutral-300);      /* #E1E1E1 */
+
+  /* Typography */
+  --typography-body-regular:  var(--regular-body);
+  --typography-body-medium:   var(--medium-body);
+  --typography-title-default: var(--medium-title);
+  --typography-caption-default: var(--regular-caption);
+
+  /* Elevation */
+  --elevation-level-1: var(--elevation-1);
+  --elevation-level-2: var(--elevation-2);
+  --elevation-level-3: var(--elevation-3);
+  --elevation-level-4: var(--elevation-4);
+}
+
+/* ─── Dark theme — toggled by adding class="dark" to <html> ─── */
+.dark {
+  /* Brand (kept vibrant; slightly lighter for dark bg legibility) */
+  --color-bg-primary:        var(--primary-500);      /* #47CFD6 */
+  --color-bg-primary-hover:  var(--primary-400);      /* #7DDDE1 */
+  --color-bg-primary-pressed:var(--primary-600);      /* #15C5CE */
+  --color-bg-primary-subtle: var(--primary-700);      /* #00ABB6 */
+
+  /* Surfaces (inverted) */
+  --color-bg-surface:        var(--neutral-700);      /* #1F1F1F */
+  --color-bg-surface-muted:  var(--neutral-600);      /* #4B4B4B */
+
+  /* Text / Content (inverted) */
+  --color-text-primary:      var(--neutral-white);    /* #FFFFFF */
+  --color-text-secondary:    var(--neutral-300);      /* #E1E1E1 */
+  --color-text-inverse:      var(--neutral-700);      /* #1F1F1F — dark text on brand bg */
+
+  /* Borders / Strokes */
+  --color-border-subtle:     var(--neutral-600);      /* #4B4B4B */
+  --color-border-strong:     var(--neutral-500);      /* #8E8E8E */
+
+  /* Feedback — same hues, no change needed */
+  --color-feedback-danger:   var(--danger-600);
+  --color-feedback-info:     var(--info-600);
+  --color-feedback-success:  var(--success-600);
+  --color-feedback-warning:  var(--warning-600);
+
+  /* Disabled states (dark) */
+  --color-disabled-bg:       var(--neutral-600);      /* #4B4B4B */
+  --color-disabled-text:     var(--neutral-500);      /* #8E8E8E */
+  --color-disabled-border:   var(--neutral-600);      /* #4B4B4B */
+
+  /* Elevation — stronger shadows for dark surfaces */
+  --elevation-level-1: 0px 2px 4px 0px rgba(0, 0, 0, 0.20), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+  --elevation-level-2: 0px 4px 10px 0px rgba(0, 0, 0, 0.30), 0px 1px 4px 0px rgba(0, 0, 0, 0.16);
+  --elevation-level-3: 0px 8px 32px 0px rgba(0, 0, 0, 0.36), 0px 2px 20px 0px rgba(0, 0, 0, 0.20);
+  --elevation-level-4: 0px 24px 60px 0px rgba(0, 0, 0, 0.48), 0px 8px 20px 0px rgba(0, 0, 0, 0.28);
+}
+

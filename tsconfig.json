@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "ignoreDeprecations": "6.0",
+    "types": ["jest", "@testing-library/jest-dom", "node", "cypress"]
+  },
+  "include": [
+    "src/**/*",
+    "jest.setup.ts",
+    ".storybook/**/*",
+    "vite.config.ts",
+    "cypress.config.ts",
+    "tailwind.config.ts",
+    "cypress/**/*"
+  ]
+}

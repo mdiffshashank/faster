@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "source": "Figma MCP + design/tokens/tokens.json",
+    "figmaFileKey": "WYuHdUuUq31HzkdJhoKwXl",
+    "strategy": "semantic-alias-to-primary",
+    "generatedAt": "2026-08-18T00:00:00Z",
+    "notes": [
+      "Semantic color, typography, border, and elevation tokens are aliased from primary tokens.",
+      "Explicit spacing and radius primitives were not present in the current Figma token payload and are therefore not generated here."
+    ]
+  },
+  "tokens": {
+    "color": {
+      "bg": {
+        "primary": {
+          "default": { "value": "{Primary.default.600}", "type": "color" },
+          "hover": { "value": "{Primary.default.500}", "type": "color" },
+          "subtle": { "value": "{Primary.default.100}", "type": "color" }
+        },
+        "surface": {
+          "default": { "value": "{Neutral.default.White}", "type": "color" },
+          "muted": { "value": "{Neutral.default.50}", "type": "color" }
+        }
+      },
+      "text": {
+        "primary": { "value": "{Neutral.default.700}", "type": "color" },
+        "secondary": { "value": "{Neutral.default.600}", "type": "color" },
+        "inverse": { "value": "{Black & White.default.White}", "type": "color" }
+      },
+      "border": {
+        "subtle": { "value": "{Neutral.default.300}", "type": "color" },
+        "strong": { "value": "{Neutral.default.400}", "type": "color" }
+      },
+      "feedback": {
+        "danger": { "value": "{Danger.default.600}", "type": "color" },
+        "info": { "value": "{Info.default.600}", "type": "color" },
+        "success": { "value": "{Success.default.600}", "type": "color" },
+        "warning": { "value": "{Warning.default.600}", "type": "color" }
+      }
+    },
+    "typography": {
+      "body": {
+        "regular": { "value": "{Regular.default.Body}", "type": "string" },
+        "medium": { "value": "{Medium.default.Body}", "type": "string" }
+      },
+      "title": {
+        "default": { "value": "{Medium.default.Title}", "type": "string" }
+      },
+      "caption": {
+        "default": { "value": "{Regular.default.Caption}", "type": "string" }
+      }
+    },
+    "elevation": {
+      "1": { "value": "{Elevation.default.1}", "type": "string" },
+      "2": { "value": "{Elevation.default.2}", "type": "string" },
+      "3": { "value": "{Elevation.default.3}", "type": "string" },
+      "4": { "value": "{Elevation.default.4}", "type": "string" }
+    }
+  }
+}
