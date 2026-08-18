@@ -6,6 +6,7 @@ Production-ready, accessible, and themeable React component library built for th
 [![NPM Version](https://img.shields.io/npm/v/@mdiffshashank/faster-ui.svg)](https://www.npmjs.com/package/@mdiffshashank/faster-ui)
 [![License](https://img.shields.io/npm/l/@mdiffshashank/faster-ui.svg)](https://www.npmjs.com/package/@mdiffshashank/faster-ui)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
+[![Storybook](https://img.shields.io/badge/Storybook-Live-ff69b4.svg)](https://mdiffshashank.github.io/faster/)
 
 ---
 
@@ -261,4 +262,6 @@ dist/
 The project uses GitHub Actions configured in [.github/workflows/ci.yml](file:///.github/workflows/ci.yml) to perform automated quality checks and continuous deployment:
 
 1. **On Pull Request (to main)**: Verifies formatting, runs lints, runs type-checks, executes unit tests, executes Cypress component tests, and runs the library build.
-2. **On Push (to main)**: Executes all validation checks and publishes the new release package to NPM using the `NPM_TOKEN` environment secret.
+2. **On Push (to main)**:
+   - Executes all validation checks and publishes the compiled React package to NPM.
+   - Automatically builds and deploys the live **Storybook** documentation site to **GitHub Pages** (accessible at [mdiffshashank.github.io/faster/](https://mdiffshashank.github.io/faster/)).
