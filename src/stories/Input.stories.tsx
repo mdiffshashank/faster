@@ -11,35 +11,34 @@ const meta: Meta<typeof Input> = {
       control: "text",
       description:
         "Visible label text — associated with the input via `htmlFor` / `id` for screen reader support.",
-      table: { category: "Content" },
+      table: { category: "Content" }
     },
     placeholder: {
       control: "text",
       description: "Placeholder shown when the input is empty.",
-      table: { category: "Content" },
+      table: { category: "Content" }
     },
     helperText: {
       control: "text",
       description:
         "Descriptive text below the field. Turns red and gains `role=alert` when `error=true`.",
-      table: { category: "Content" },
+      table: { category: "Content" }
     },
     error: {
       control: "boolean",
-      description:
-        "Triggers error border colour, `aria-invalid=true`, and colours helperText red.",
+      description: "Triggers error border colour, `aria-invalid=true`, and colours helperText red.",
       table: {
         category: "State",
-        defaultValue: { summary: "false" },
-      },
+        defaultValue: { summary: "false" }
+      }
     },
     disabled: {
       control: "boolean",
       description: "Disables editing and applies muted styling.",
       table: {
         category: "State",
-        defaultValue: { summary: "false" },
-      },
+        defaultValue: { summary: "false" }
+      }
     },
     required: {
       control: "boolean",
@@ -47,8 +46,8 @@ const meta: Meta<typeof Input> = {
         "Marks the field as required — adds a visible `*` to the label and a screen-reader-only `(required)` text.",
       table: {
         category: "State",
-        defaultValue: { summary: "false" },
-      },
+        defaultValue: { summary: "false" }
+      }
     },
     size: {
       control: "radio",
@@ -56,28 +55,28 @@ const meta: Meta<typeof Input> = {
       description: "Size variant of the input field.",
       table: {
         category: "Appearance",
-        defaultValue: { summary: "md" },
-      },
+        defaultValue: { summary: "md" }
+      }
     },
     value: {
       control: "text",
       description:
         "Controlled value. Leave `undefined` for uncontrolled usage (React manages internal state).",
-      table: { category: "Data" },
+      table: { category: "Data" }
     },
     id: {
       control: "text",
       description:
         "Explicit `id` for the `<input>`. If omitted, a unique id is auto-generated via `useId`.",
-      table: { category: "HTML" },
+      table: { category: "HTML" }
     },
     onChange: {
       description: "Fires on every keystroke with the native input event.",
-      table: { category: "Events" },
-    },
+      table: { category: "Events" }
+    }
   },
   args: {
-    onChange: fn(),
+    onChange: fn()
   },
   parameters: {
     docs: {
@@ -90,10 +89,10 @@ Supports a visible **label** (with optional required marker), **placeholder**, *
 Full accessibility: label associated via \`htmlFor\`/\`id\`, \`aria-invalid\` on error, \`aria-describedby\` linking to helper text, and \`role=alert\` on error messages for screen readers.
 
 Supports sm, md, and lg size variants, and both **controlled** (\`value\` + \`onChange\`) and \`uncontrolled\` (no \`value\`) usage.
-        `.trim(),
-      },
-    },
-  },
+        `.trim()
+      }
+    }
+  }
 };
 
 export default meta;
@@ -105,8 +104,8 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: { placeholder: "Enter text…" },
   parameters: {
-    docs: { description: { story: "Minimal input — placeholder only, no label or helper text." } },
-  },
+    docs: { description: { story: "Minimal input — placeholder only, no label or helper text." } }
+  }
 };
 
 /** Input with an associated label. Clicking the label focuses the input. */
@@ -116,10 +115,10 @@ export const WithLabel: Story = {
     docs: {
       description: {
         story:
-          "Label linked to the input via `htmlFor`/`id`. Clicking the label moves focus to the input — essential for a11y.",
-      },
-    },
-  },
+          "Label linked to the input via `htmlFor`/`id`. Clicking the label moves focus to the input — essential for a11y."
+      }
+    }
+  }
 };
 
 /** Helper text guides the user without indicating an error. */
@@ -128,15 +127,16 @@ export const WithHelperText: Story = {
     label: "Email address",
     placeholder: "you@example.com",
     helperText: "We'll never share your email with anyone.",
-    id: "email-helper",
+    id: "email-helper"
   },
   parameters: {
     docs: {
       description: {
-        story: "Helper text provides supporting context below the input. It is linked via `aria-describedby`.",
-      },
-    },
-  },
+        story:
+          "Helper text provides supporting context below the input. It is linked via `aria-describedby`."
+      }
+    }
+  }
 };
 
 /**
@@ -149,16 +149,16 @@ export const ErrorState: Story = {
     value: "not-an-email",
     helperText: "Please enter a valid email address.",
     error: true,
-    id: "email-error",
+    id: "email-error"
   },
   parameters: {
     docs: {
       description: {
         story:
-          "Error state: red border + `aria-invalid=true` + helper text with `role=alert`. Screen readers announce the error immediately.",
-      },
-    },
-  },
+          "Error state: red border + `aria-invalid=true` + helper text with `role=alert`. Screen readers announce the error immediately."
+      }
+    }
+  }
 };
 
 /** Disabled — the field is non-editable with muted styling. */
@@ -167,15 +167,16 @@ export const Disabled: Story = {
     label: "Username",
     value: "shashank_trivedi",
     disabled: true,
-    id: "username-disabled",
+    id: "username-disabled"
   },
   parameters: {
     docs: {
       description: {
-        story: "Disabled state — field is non-editable, visually muted, and correctly reported to assistive technology.",
-      },
-    },
-  },
+        story:
+          "Disabled state — field is non-editable, visually muted, and correctly reported to assistive technology."
+      }
+    }
+  }
 };
 
 /** Required — adds a visible * and a hidden '(required)' for screen readers. */
@@ -185,16 +186,16 @@ export const Required: Story = {
     placeholder: "••••••••",
     required: true,
     id: "password-required",
-    type: "password",
+    type: "password"
   },
   parameters: {
     docs: {
       description: {
         story:
-          "Required field: visible `*` marker with `aria-hidden=true` plus a screen-reader-only `(required)` text so all users understand the requirement.",
-      },
-    },
-  },
+          "Required field: visible `*` marker with `aria-hidden=true` plus a screen-reader-only `(required)` text so all users understand the requirement."
+      }
+    }
+  }
 };
 
 /** All error + required features combined. */
@@ -205,11 +206,13 @@ export const RequiredWithError: Story = {
     required: true,
     error: true,
     helperText: "Email is required.",
-    id: "email-req-error",
+    id: "email-req-error"
   },
   parameters: {
-    docs: { description: { story: "Required field in error state — the most complex combination." } },
-  },
+    docs: {
+      description: { story: "Required field in error state — the most complex combination." }
+    }
+  }
 };
 
 /** Password input - utilizes browser masking by setting type="password". */
@@ -218,11 +221,13 @@ export const Password: Story = {
     label: "Password",
     placeholder: "••••••••",
     type: "password",
-    id: "password-story",
+    id: "password-story"
   },
   parameters: {
-    docs: { description: { story: "Password input utilizing browser masking (`type='password'`)." } },
-  },
+    docs: {
+      description: { story: "Password input utilizing browser masking (`type='password'`)." }
+    }
+  }
 };
 
 /** Number input - exposes browser increment/decrement buttons if applicable. */
@@ -233,11 +238,15 @@ export const NumberInput: Story = {
     type: "number",
     min: 0,
     max: 120,
-    id: "age-story",
+    id: "age-story"
   },
   parameters: {
-    docs: { description: { story: "Number input restricting entry to numeric values with min/max bounds." } },
-  },
+    docs: {
+      description: {
+        story: "Number input restricting entry to numeric values with min/max bounds."
+      }
+    }
+  }
 };
 
 /** Search input - styled with a search type, exposing clear indicators. */
@@ -246,11 +255,16 @@ export const Search: Story = {
     label: "Search database",
     placeholder: "Search users, transactions, logs...",
     type: "search",
-    id: "search-story",
+    id: "search-story"
   },
   parameters: {
-    docs: { description: { story: "Search input using `type='search'` to support clear controls in compatible browsers." } },
-  },
+    docs: {
+      description: {
+        story:
+          "Search input using `type='search'` to support clear controls in compatible browsers."
+      }
+    }
+  }
 };
 
 /** Story demonstrating layout stability with extremely long labels and helper text wrapping. */
@@ -258,23 +272,43 @@ export const WithLongText: Story = {
   args: {
     label: "Confirm your registered, verified and primary email address of record",
     placeholder: "name@company.domain.co.uk",
-    helperText: "By submitting this, you confirm that you have read all terms of services, privacy policies, data usage terms, cookies policies and agree to receive marketing notifications from our subsidiaries.",
-    id: "long-text-story",
+    helperText:
+      "By submitting this, you confirm that you have read all terms of services, privacy policies, data usage terms, cookies policies and agree to receive marketing notifications from our subsidiaries.",
+    id: "long-text-story"
   },
   parameters: {
-    docs: { description: { story: "Input displaying text wrap performance under long labels and helper texts." } },
-  },
+    docs: {
+      description: {
+        story: "Input displaying text wrap performance under long labels and helper texts."
+      }
+    }
+  }
 };
 
 /** All sizes (sm, md, lg) side-by-side. */
 export const AllSizes: Story = {
   render: () => (
     <div className="flex flex-col gap-4 max-w-md">
-      <Input size="sm" label="Small size" placeholder="sm input" helperText="Helper text for small input" />
-      <Input size="md" label="Medium size (default)" placeholder="md input" helperText="Helper text for medium input" />
-      <Input size="lg" label="Large size" placeholder="lg input" helperText="Helper text for large input" />
+      <Input
+        size="sm"
+        label="Small size"
+        placeholder="sm input"
+        helperText="Helper text for small input"
+      />
+      <Input
+        size="md"
+        label="Medium size (default)"
+        placeholder="md input"
+        helperText="Helper text for medium input"
+      />
+      <Input
+        size="lg"
+        label="Large size"
+        placeholder="lg input"
+        helperText="Helper text for large input"
+      />
     </div>
-  ),
+  )
 };
 
 /**
@@ -289,14 +323,14 @@ export const Playground: Story = {
     disabled: false,
     required: false,
     size: "md",
-    id: "playground-input",
+    id: "playground-input"
   },
   parameters: {
     docs: {
       description: {
         story:
-          "Full interactive playground. Toggle `error`, `disabled`, `required`, `size` and edit `label` / `helperText` live in the **Controls** panel.",
-      },
-    },
-  },
+          "Full interactive playground. Toggle `error`, `disabled`, `required`, `size` and edit `label` / `helperText` live in the **Controls** panel."
+      }
+    }
+  }
 };

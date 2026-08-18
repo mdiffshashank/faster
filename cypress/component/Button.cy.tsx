@@ -40,7 +40,11 @@ describe("Button", () => {
   });
 
   it("renders danger modifier", () => {
-    cy.mount(<Button variant="primary" danger>Danger Primary</Button>);
+    cy.mount(
+      <Button variant="primary" danger>
+        Danger Primary
+      </Button>
+    );
     cy.get("button").should("have.class", "bg-danger");
   });
 
@@ -55,16 +59,12 @@ describe("Button", () => {
   });
 
   it("renders left icon", () => {
-    cy.mount(
-      <Button leftIcon={<span data-cy="icon-left">★</span>}>With icon</Button>,
-    );
+    cy.mount(<Button leftIcon={<span data-cy="icon-left">★</span>}>With icon</Button>);
     cy.get("[data-cy='icon-left']").should("exist");
   });
 
   it("renders right icon", () => {
-    cy.mount(
-      <Button rightIcon={<span data-cy="icon-right">→</span>}>With icon</Button>,
-    );
+    cy.mount(<Button rightIcon={<span data-cy="icon-right">→</span>}>With icon</Button>);
     cy.get("[data-cy='icon-right']").should("exist");
   });
 
@@ -99,7 +99,7 @@ describe("Button", () => {
     cy.mount(
       <Button disabled onClick={onClick}>
         Disabled
-      </Button>,
+      </Button>
     );
     cy.get("button").click({ force: true });
     cy.get("@onClick").should("not.have.been.called");
@@ -117,4 +117,3 @@ describe("Button", () => {
     cy.get("button").should("not.have.attr", "tabindex", "-1");
   });
 });
-

@@ -7,4 +7,3 @@ describe("App", () => {
     expect(screen.getByRole("heading", { name: /faster ui/i })).toBeInTheDocument();
   });
 });
-

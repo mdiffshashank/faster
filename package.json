@@ -21,7 +21,6 @@
     "dev": "storybook dev -p 6006",
     "build": "tsc --noEmit && tsup",
     "lib:build": "tsup",
-    "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "format": "prettier --check .",
@@ -32,13 +31,15 @@
     "cypress:run": "cypress run --component",
     "cypress:verify": "cypress verify",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build"
+    "storybook:build": "storybook build",
+    "prepare": "husky"
   },
   "dependencies": {
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
+    "husky": "^9.1.5",
     "@cypress/react": "^9.0.2",
     "@cypress/vite-dev-server": "^7.3.4",
     "@eslint/js": "^10.0.1",

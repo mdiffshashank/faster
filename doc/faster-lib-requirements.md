@@ -1,6 +1,6 @@
 # Faster UI — Component Library Requirements
 
-> Extracted from: *Design System Web Engineer — Task Brief*
+> Extracted from: _Design System Web Engineer — Task Brief_
 > Scope: Implementation requirements only (excludes presentation/discussion topics)
 
 ---
@@ -10,11 +10,13 @@
 Build a small component library called **"Faster"** as part of a Design System.
 
 ### Components to Build
+
 - `Button`
 - `Input`
 - `Dialog`
 
 ### Library Goals
+
 - Production-ready components
 - Fully tested (unit + e2e)
 - Built using reusable design tokens
@@ -25,16 +27,16 @@ Build a small component library called **"Faster"** as part of a Design System.
 
 ## 2. Tech Stack
 
-| Tool | Purpose |
-|---|---|
-| React | Component framework |
-| TypeScript (TSX) | Type-safe development |
-| Tailwind CSS | Utility-first styling |
-| Design Tokens | Centralized colors and scalability |
-| Jest + React Testing Library | Unit testing |
-| Cypress | Component and interaction testing |
-| Storybook | Documentation and interactive exploration |
-| GitHub Actions | CI/CD automation |
+| Tool                         | Purpose                                   |
+| ---------------------------- | ----------------------------------------- |
+| React                        | Component framework                       |
+| TypeScript (TSX)             | Type-safe development                     |
+| Tailwind CSS                 | Utility-first styling                     |
+| Design Tokens                | Centralized colors and scalability        |
+| Jest + React Testing Library | Unit testing                              |
+| Cypress                      | Component and interaction testing         |
+| Storybook                    | Documentation and interactive exploration |
+| GitHub Actions               | CI/CD automation                          |
 
 ---
 
@@ -96,6 +98,7 @@ Build a small component library called **"Faster"** as part of a Design System.
 ### 5.1 Jest + React Testing Library
 
 Write tests covering:
+
 - [ ] Component rendering
 - [ ] All variants and states
 - [ ] User interactions (click, type, focus)
@@ -104,6 +107,7 @@ Write tests covering:
 ### 5.2 Cypress (Mandatory)
 
 Write component tests covering:
+
 - [ ] Successful mounting of each component
 - [ ] Basic rendering validation
 - [ ] Button interactions (click, disabled)
@@ -186,10 +190,10 @@ The workflow must run the following steps automatically on push/PR:
 
 ## 12. Reference Links
 
-| Resource | URL |
-|---|---|
-| Figma Design File | [TapTap Design System](https://www.figma.com/design/WYuHdUuUq31HzkdJhoKwXl/TapTap-Design-System%E4%B8%A8Developers--Community-?node-id=12-11244&p=f&t=IdkiBp7B4GxCdKAF-0) |
-| Tailwind CSS Docs | https://tailwindcss.com/docs |
-| Storybook Controls | https://storybook.js.org/docs/essentials/controls |
-| Cypress Component Testing | https://docs.cypress.io/guides/component-testing/overview |
-| GitHub Actions | https://docs.github.com/en/actions |
+| Resource                  | URL                                                                                                                                                                       |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Figma Design File         | [TapTap Design System](https://www.figma.com/design/WYuHdUuUq31HzkdJhoKwXl/TapTap-Design-System%E4%B8%A8Developers--Community-?node-id=12-11244&p=f&t=IdkiBp7B4GxCdKAF-0) |
+| Tailwind CSS Docs         | https://tailwindcss.com/docs                                                                                                                                              |
+| Storybook Controls        | https://storybook.js.org/docs/essentials/controls                                                                                                                         |
+| Cypress Component Testing | https://docs.cypress.io/guides/component-testing/overview                                                                                                                 |
+| GitHub Actions            | https://docs.github.com/en/actions                                                                                                                                        |

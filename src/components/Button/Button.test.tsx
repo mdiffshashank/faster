@@ -40,7 +40,7 @@ describe("Button", () => {
       (variant) => {
         render(<Button variant={variant}>{variant}</Button>);
         expect(screen.getByRole("button")).toBeInTheDocument();
-      },
+      }
     );
 
     it("applies primary brand background class by default", () => {
@@ -60,12 +60,20 @@ describe("Button", () => {
     });
 
     it("applies danger primary classes when danger=true", () => {
-      render(<Button variant="primary" danger>Danger Primary</Button>);
+      render(
+        <Button variant="primary" danger>
+          Danger Primary
+        </Button>
+      );
       expect(screen.getByRole("button")).toHaveClass("bg-danger");
     });
 
     it("applies danger outline classes when danger=true", () => {
-      render(<Button variant="outline" danger>Danger Outline</Button>);
+      render(
+        <Button variant="outline" danger>
+          Danger Outline
+        </Button>
+      );
       expect(screen.getByRole("button")).toHaveClass("border-danger");
       expect(screen.getByRole("button")).toHaveClass("text-danger");
     });
@@ -94,13 +102,7 @@ describe("Button", () => {
   // ── Layouts & Custom States ───────────────────────────────────────────────
   describe("layouts and custom states", () => {
     it("renders square dimensions for icon-only buttons", () => {
-      render(
-        <Button
-          size="md"
-          leftIcon={<span data-testid="icon">★</span>}
-          aria-label="Star"
-        />
-      );
+      render(<Button size="md" leftIcon={<span data-testid="icon">★</span>} aria-label="Star" />);
       expect(screen.getByRole("button")).toHaveClass("w-10");
       expect(screen.getByRole("button")).toHaveClass("h-10");
       expect(screen.getByRole("button")).toHaveClass("p-0");
@@ -155,7 +157,7 @@ describe("Button", () => {
       render(
         <Button disabled onClick={onClick}>
           Disabled
-        </Button>,
+        </Button>
       );
       await user.click(screen.getByRole("button"));
       expect(onClick).not.toHaveBeenCalled();
@@ -166,7 +168,7 @@ describe("Button", () => {
       render(
         <Button disabled onClick={onClick}>
           Disabled
-        </Button>,
+        </Button>
       );
       screen.getByRole("button").focus();
       await user.keyboard("{Enter}");
@@ -178,7 +180,7 @@ describe("Button", () => {
       render(
         <Button disabled onClick={onClick}>
           Disabled
-        </Button>,
+        </Button>
       );
       screen.getByRole("button").focus();
       await user.keyboard(" ");
@@ -198,7 +200,7 @@ describe("Button", () => {
         <div>
           <span tabIndex={0}>Before</span>
           <Button>Focusable</Button>
-        </div>,
+        </div>
       );
       await user.tab();
       await user.tab();
@@ -215,11 +217,9 @@ describe("Button", () => {
       render(
         <Button leftIcon={<span>★</span>} rightIcon={<span>→</span>}>
           Btn
-        </Button>,
+        </Button>
       );
-      const icons = screen
-        .getByRole("button")
-        .querySelectorAll('[aria-hidden="true"]');
+      const icons = screen.getByRole("button").querySelectorAll('[aria-hidden="true"]');
       expect(icons).toHaveLength(2);
     });
   });

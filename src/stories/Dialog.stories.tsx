@@ -17,25 +17,25 @@ const meta: Meta<typeof Dialog> = {
         "Controls dialog visibility. Toggle this in the Controls panel to open / close the dialog interactively.",
       table: {
         category: "State",
-        defaultValue: { summary: "false" },
-      },
+        defaultValue: { summary: "false" }
+      }
     },
     title: {
       control: "text",
       description:
         "Dialog heading — rendered in the header and announced to screen readers via `aria-labelledby`.",
-      table: { category: "Content" },
+      table: { category: "Content" }
     },
     children: {
       control: "text",
       description: "Dialog body content. Accepts any React node.",
-      table: { category: "Content" },
+      table: { category: "Content" }
     },
     footer: {
       control: false,
       description:
         "Optional footer content — typically action buttons. Renders in a bordered footer section.",
-      table: { category: "Content" },
+      table: { category: "Content" }
     },
     size: {
       control: "radio",
@@ -43,17 +43,17 @@ const meta: Meta<typeof Dialog> = {
       description: "Size variant of the dialog panel width constraints.",
       table: {
         category: "Appearance",
-        defaultValue: { summary: "md" },
-      },
+        defaultValue: { summary: "md" }
+      }
     },
     onClose: {
       description:
         "Fired when the dialog should close: ESC key, backdrop click, or close button click.",
-      table: { category: "Events" },
-    },
+      table: { category: "Events" }
+    }
   },
   args: {
-    onClose: fn(),
+    onClose: fn()
   },
   parameters: {
     docs: {
@@ -71,10 +71,10 @@ Implements the WCAG 2.1 AA modal pattern:
 - Supports **sm**, **md**, and **lg** size width limits.
 
 Use the **Controls** panel to toggle \`open\` and see the dialog appear/disappear in real time.
-        `.trim(),
-      },
-    },
-  },
+        `.trim()
+      }
+    }
+  }
 };
 
 export default meta;
@@ -91,15 +91,15 @@ export const Default: Story = {
     open: false,
     title: "Confirm action",
     children: "Are you sure you want to proceed? This action cannot be undone.",
-    size: "md",
+    size: "md"
   },
   parameters: {
     docs: {
       description: {
         story:
-          "Minimal dialog. Toggle `open` in the **Controls** panel — or click **Open dialog** — to see it in action.",
-      },
-    },
+          "Minimal dialog. Toggle `open` in the **Controls** panel — or click **Open dialog** — to see it in action."
+      }
+    }
   },
   render: function Render(args) {
     const [{ open }, updateArgs] = useArgs<{ open: boolean }>();
@@ -116,7 +116,7 @@ export const Default: Story = {
         />
       </div>
     );
-  },
+  }
 };
 
 /** Dialog with primary + secondary action buttons in the footer slot. */
@@ -126,14 +126,14 @@ export const WithFooter: Story = {
     title: "Delete item",
     children:
       "This will permanently delete the selected item and all associated data. This action cannot be undone.",
-    size: "md",
+    size: "md"
   },
   parameters: {
     docs: {
       description: {
-        story: "Dialog with a footer slot containing confirm and cancel actions.",
-      },
-    },
+        story: "Dialog with a footer slot containing confirm and cancel actions."
+      }
+    }
   },
   render: function Render(args) {
     const [{ open }, updateArgs] = useArgs<{ open: boolean }>();
@@ -175,7 +175,7 @@ export const WithFooter: Story = {
         />
       </div>
     );
-  },
+  }
 };
 
 /** Dialog with long body content — the body area scrolls independently. */
@@ -183,21 +183,22 @@ export const LongContent: Story = {
   args: {
     open: false,
     title: "Terms and Conditions",
-    size: "md",
+    size: "md"
   },
   parameters: {
     docs: {
       description: {
-        story: "When body content overflows, the dialog body scrolls while the header and footer stay fixed.",
-      },
-    },
+        story:
+          "When body content overflows, the dialog body scrolls while the header and footer stay fixed."
+      }
+    }
   },
   render: function Render(args) {
     const [{ open }, updateArgs] = useArgs<{ open: boolean }>();
     const loremParagraphs = Array.from(
       { length: 6 },
       (_, i) =>
-        `Section ${i + 1}: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+        `Section ${i + 1}: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`
     );
     return (
       <div className="flex h-40 items-center justify-center">
@@ -209,9 +210,7 @@ export const LongContent: Story = {
             updateArgs({ open: false });
             args.onClose();
           }}
-          footer={
-            <Button onClick={() => updateArgs({ open: false })}>I agree</Button>
-          }
+          footer={<Button onClick={() => updateArgs({ open: false })}>I agree</Button>}
         >
           <div className="space-y-3">
             {loremParagraphs.map((p, i) => (
@@ -221,7 +220,7 @@ export const LongContent: Story = {
         </Dialog>
       </div>
     );
-  },
+  }
 };
 
 /** Dialog containing form input elements. Tests focus cycle inside the focus trap. */
@@ -229,14 +228,15 @@ export const WithForm: Story = {
   args: {
     open: false,
     title: "Edit profile",
-    size: "md",
+    size: "md"
   },
   parameters: {
     docs: {
       description: {
-        story: "A dialog containing input form elements. The focus trap cycles focus correctly through the fields and action buttons.",
-      },
-    },
+        story:
+          "A dialog containing input form elements. The focus trap cycles focus correctly through the fields and action buttons."
+      }
+    }
   },
   render: function Render(args) {
     const [{ open }, updateArgs] = useArgs<{ open: boolean }>();
@@ -281,12 +281,18 @@ export const WithForm: Story = {
             className="space-y-4"
           >
             <Input label="Name" placeholder="John Doe" required id="form-name" />
-            <Input label="Email" type="email" placeholder="john@example.com" required id="form-email" />
+            <Input
+              label="Email"
+              type="email"
+              placeholder="john@example.com"
+              required
+              id="form-email"
+            />
           </form>
         </Dialog>
       </div>
     );
-  },
+  }
 };
 
 /** Destructive alert modal — highlights critical decisions with danger states. */
@@ -294,15 +300,17 @@ export const Destructive: Story = {
   args: {
     open: false,
     title: "Revoke API access token",
-    children: "This will immediately revoke the access token. Any requests using this token will fail. This action cannot be reversed.",
-    size: "md",
+    children:
+      "This will immediately revoke the access token. Any requests using this token will fail. This action cannot be reversed.",
+    size: "md"
   },
   parameters: {
     docs: {
       description: {
-        story: "Destructive confirmation dialog using a warning message and a danger primary action.",
-      },
-    },
+        story:
+          "Destructive confirmation dialog using a warning message and a danger primary action."
+      }
+    }
   },
   render: function Render(args) {
     const [{ open }, updateArgs] = useArgs<{ open: boolean }>();
@@ -344,7 +352,7 @@ export const Destructive: Story = {
         />
       </div>
     );
-  },
+  }
 };
 
 /** Simple dialog with informational content and no action buttons in the footer. */
@@ -352,15 +360,16 @@ export const NoFooter: Story = {
   args: {
     open: false,
     title: "System notice",
-    children: "Maintenance is scheduled for tonight at 23:00 UTC. The platform will remain online, but minor latency variations might occur.",
-    size: "md",
+    children:
+      "Maintenance is scheduled for tonight at 23:00 UTC. The platform will remain online, but minor latency variations might occur.",
+    size: "md"
   },
   parameters: {
     docs: {
       description: {
-        story: "A simple informational modal dialog without action buttons in the footer.",
-      },
-    },
+        story: "A simple informational modal dialog without action buttons in the footer."
+      }
+    }
   },
   render: function Render(args) {
     const [{ open }, updateArgs] = useArgs<{ open: boolean }>();
@@ -377,7 +386,7 @@ export const NoFooter: Story = {
         />
       </div>
     );
-  },
+  }
 };
 
 /** Comparative demo of all sizes (sm, md, lg) side-by-side. */
@@ -385,17 +394,23 @@ export const AllSizes: Story = {
   parameters: {
     docs: {
       description: {
-        story: "Compare width constraints of small, medium, and large dialogs side-by-side.",
-      },
-    },
+        story: "Compare width constraints of small, medium, and large dialogs side-by-side."
+      }
+    }
   },
   render: function Render(args) {
     const [size, setSize] = useState<"sm" | "md" | "lg" | null>(null);
     return (
       <div className="flex items-center justify-center gap-3 h-40">
-        <Button variant="outline" onClick={() => setSize("sm")}>Small Dialog</Button>
-        <Button variant="outline" onClick={() => setSize("md")}>Medium Dialog</Button>
-        <Button variant="outline" onClick={() => setSize("lg")}>Large Dialog</Button>
+        <Button variant="outline" onClick={() => setSize("sm")}>
+          Small Dialog
+        </Button>
+        <Button variant="outline" onClick={() => setSize("md")}>
+          Medium Dialog
+        </Button>
+        <Button variant="outline" onClick={() => setSize("lg")}>
+          Large Dialog
+        </Button>
         <Dialog
           {...args}
           open={size !== null}
@@ -408,7 +423,7 @@ export const AllSizes: Story = {
         </Dialog>
       </div>
     );
-  },
+  }
 };
 
 /**
@@ -420,15 +435,15 @@ export const Playground: Story = {
     open: false,
     title: "Playground Dialog",
     children: "Edit the Controls panel below to customise this dialog in real time.",
-    size: "md",
+    size: "md"
   },
   parameters: {
     docs: {
       description: {
         story:
-          "Full interactive playground. Toggle `open`, edit `title` and `children` in the **Controls** panel.",
-      },
-    },
+          "Full interactive playground. Toggle `open`, edit `title` and `children` in the **Controls** panel."
+      }
+    }
   },
   render: function Render(args) {
     const [{ open }, updateArgs] = useArgs<{ open: boolean }>();
@@ -449,5 +464,5 @@ export const Playground: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await userEvent.click(canvas.getByRole("button", { name: /open playground dialog/i }));
-  },
+  }
 };

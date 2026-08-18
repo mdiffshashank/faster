@@ -6,7 +6,7 @@ const FOCUSABLE_SELECTORS = [
   "input:not([disabled])",
   "select:not([disabled])",
   "textarea:not([disabled])",
-  '[tabindex]:not([tabindex="-1"])',
+  '[tabindex]:not([tabindex="-1"])'
 ].join(", ");
 
 /**
@@ -30,7 +30,7 @@ export function useFocusTrap(isActive: boolean) {
 
     function getFocusableElements(): HTMLElement[] {
       return Array.from(container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTORS)).filter(
-        (el) => !el.closest("[aria-hidden='true']"),
+        (el) => !el.closest("[aria-hidden='true']")
       );
     }
 

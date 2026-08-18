@@ -28,7 +28,7 @@ export interface DialogProps {
 const dialogSizeClasses: Record<DialogSize, string> = {
   sm: "max-w-sm",
   md: "max-w-md",
-  lg: "max-w-lg",
+  lg: "max-w-lg"
 };
 
 /**
@@ -91,7 +91,7 @@ export function Dialog({ open, title, children, footer, size = "md", onClose }: 
         aria-labelledby={titleId}
         className={[
           "relative z-10 flex w-full flex-col rounded-xl bg-surface shadow-elevation-4",
-          dialogSizeClasses[size],
+          dialogSizeClasses[size]
         ].join(" ")}
         onClick={(e) => e.stopPropagation()}
       >
@@ -125,9 +125,7 @@ export function Dialog({ open, title, children, footer, size = "md", onClose }: 
         </div>
 
         {/* Body */}
-        <div className="overflow-y-auto px-6 py-4 text-sm text-content-muted">
-          {children}
-        </div>
+        <div className="overflow-y-auto px-6 py-4 text-sm text-content-muted">{children}</div>
 
         {/* Footer */}
         {footer && (
@@ -137,6 +135,6 @@ export function Dialog({ open, title, children, footer, size = "md", onClose }: 
         )}
       </div>
     </div>,
-    document.body,
+    document.body
   );
 }

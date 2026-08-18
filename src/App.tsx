@@ -40,12 +40,17 @@ function App() {
 
         {/* Button section */}
         <section aria-labelledby="button-heading" className="space-y-4">
-          <h2 id="button-heading" className="text-lg font-medium text-content border-b border-stroke pb-2">
+          <h2
+            id="button-heading"
+            className="text-lg font-medium text-content border-b border-stroke pb-2"
+          >
             Button
           </h2>
 
           <div className="space-y-3">
-            <p className="text-xs font-medium uppercase tracking-wider text-content-muted">Variants</p>
+            <p className="text-xs font-medium uppercase tracking-wider text-content-muted">
+              Variants
+            </p>
             <div className="flex flex-wrap gap-3">
               <Button>Primary</Button>
               <Button variant="secondary">Secondary</Button>
@@ -62,18 +67,27 @@ function App() {
           </div>
 
           <div className="space-y-3">
-            <p className="text-xs font-medium uppercase tracking-wider text-content-muted">Disabled</p>
+            <p className="text-xs font-medium uppercase tracking-wider text-content-muted">
+              Disabled
+            </p>
             <div className="flex flex-wrap gap-3">
               <Button disabled>Primary</Button>
-              <Button variant="secondary" disabled>Secondary</Button>
-              <Button variant="ghost" disabled>Ghost</Button>
+              <Button variant="secondary" disabled>
+                Secondary
+              </Button>
+              <Button variant="ghost" disabled>
+                Ghost
+              </Button>
             </div>
           </div>
         </section>
 
         {/* Input section */}
         <section aria-labelledby="input-heading" className="space-y-4">
-          <h2 id="input-heading" className="text-lg font-medium text-content border-b border-stroke pb-2">
+          <h2
+            id="input-heading"
+            className="text-lg font-medium text-content border-b border-stroke pb-2"
+          >
             Input
           </h2>
 
@@ -86,20 +100,12 @@ function App() {
               onChange={(e) => setEmail(e.target.value)}
               onBlur={handleEmailBlur}
               error={emailError}
-              helperText={emailError ? "Please enter a valid email address." : "We'll never share your email."}
+              helperText={
+                emailError ? "Please enter a valid email address." : "We'll never share your email."
+              }
             />
-            <Input
-              label="Username"
-              id="demo-username"
-              placeholder="Enter username"
-              required
-            />
-            <Input
-              label="Disabled field"
-              id="demo-disabled"
-              value="Cannot edit this"
-              disabled
-            />
+            <Input label="Username" id="demo-username" placeholder="Enter username" required />
+            <Input label="Disabled field" id="demo-disabled" value="Cannot edit this" disabled />
             <Input
               label="Error state"
               id="demo-error"
@@ -112,7 +118,10 @@ function App() {
 
         {/* Dialog section */}
         <section aria-labelledby="dialog-heading" className="space-y-4">
-          <h2 id="dialog-heading" className="text-lg font-medium text-content border-b border-stroke pb-2">
+          <h2
+            id="dialog-heading"
+            className="text-lg font-medium text-content border-b border-stroke pb-2"
+          >
             Dialog
           </h2>
 
@@ -126,11 +135,7 @@ function App() {
       </main>
 
       {/* Simple dialog */}
-      <Dialog
-        open={dialogOpen}
-        title="Welcome to Faster UI"
-        onClose={() => setDialogOpen(false)}
-      >
+      <Dialog open={dialogOpen} title="Welcome to Faster UI" onClose={() => setDialogOpen(false)}>
         <p>
           This dialog is fully accessible — it traps focus, locks body scroll, closes on ESC or
           backdrop click, and returns focus to the trigger button when closed.

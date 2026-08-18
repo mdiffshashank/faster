@@ -26,14 +26,10 @@
   --primary-100: #eefcfc;
   --primary-50: #f9ffff;
   --grey-palette-white: #ffffff;
-  --elevation-1:
-    0px 2px 4px 0px rgba(0, 0, 0, 0.04), 0px 1px 1px 0px rgba(0, 0, 0, 0.02);
-  --elevation-2:
-    0px 4px 10px 0px rgba(0, 0, 0, 0.08), 0px 1px 4px 0px rgba(0, 0, 0, 0.04);
-  --elevation-3:
-    0px 8px 32px 0px rgba(0, 0, 0, 0.08), 0px 2px 20px 0px rgba(0, 0, 0, 0.04);
-  --elevation-4:
-    0px 24px 60px 0px rgba(0, 0, 0, 0.12), 0px 8px 20px 0px rgba(0, 0, 0, 0.06);
+  --elevation-1: 0px 2px 4px 0px rgba(0, 0, 0, 0.04), 0px 1px 1px 0px rgba(0, 0, 0, 0.02);
+  --elevation-2: 0px 4px 10px 0px rgba(0, 0, 0, 0.08), 0px 1px 4px 0px rgba(0, 0, 0, 0.04);
+  --elevation-3: 0px 8px 32px 0px rgba(0, 0, 0, 0.08), 0px 2px 20px 0px rgba(0, 0, 0, 0.04);
+  --elevation-4: 0px 24px 60px 0px rgba(0, 0, 0, 0.12), 0px 8px 20px 0px rgba(0, 0, 0, 0.06);
   --light-fill-color-text-primary: rgba(0, 0, 0, 0.9);
   --auxiliary-700: #fe632f;
   --auxiliary-600: #ff8156;

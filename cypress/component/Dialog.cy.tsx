@@ -53,9 +53,7 @@ describe("Dialog", () => {
   });
 
   it("renders footer content when provided", () => {
-    cy.mount(
-      <ControlledDialog footer={<button data-cy="confirm-btn">Confirm</button>} />,
-    );
+    cy.mount(<ControlledDialog footer={<button data-cy="confirm-btn">Confirm</button>} />);
     cy.get("[data-cy='open-btn']").click();
     cy.get("[data-cy='confirm-btn']").should("be.visible");
   });

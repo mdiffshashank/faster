@@ -10,7 +10,7 @@ import "../src/index.css";
  */
 function ThemeDecorator({
   Story,
-  backgroundValue,
+  backgroundValue
 }: {
   Story: React.FC;
   backgroundValue: string | undefined;
@@ -42,8 +42,8 @@ const preview: Preview = {
     controls: {
       matchers: {
         // Auto-use a date picker for props ending in Date
-        date: /Date$/,
-      },
+        date: /Date$/
+      }
     },
 
     // Light + dark backgrounds — selecting dark toggles the .dark class via withTheme decorator
@@ -52,8 +52,8 @@ const preview: Preview = {
       values: [
         { name: "light", value: "#FFFFFF" },
         { name: "dark", value: "#1F1F1F" },
-        { name: "surface-muted", value: "#FAFAFA" },
-      ],
+        { name: "surface-muted", value: "#FAFAFA" }
+      ]
     },
 
     // Global a11y config — WCAG 2.1 AA rules applied to every story
@@ -61,19 +61,19 @@ const preview: Preview = {
       config: {
         rules: [
           // Enforce colour contrast at AA level
-          { id: "color-contrast", enabled: true },
-        ],
-      },
+          { id: "color-contrast", enabled: true }
+        ]
+      }
     },
 
     docs: {
       // Show source code for every story
-      source: { type: "auto" },
-    },
+      source: { type: "auto" }
+    }
   },
 
   // Apply autodocs to every story that opts in with tags: ["autodocs"]
-  tags: ["autodocs"],
+  tags: ["autodocs"]
 };
 
 export default preview;

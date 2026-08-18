@@ -2,8 +2,10 @@ import { forwardRef, useId, type InputHTMLAttributes } from "react";
 
 export type InputSize = "sm" | "md" | "lg";
 
-export interface InputProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "id" | "disabled" | "size"> {
+export interface InputProps extends Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "id" | "disabled" | "size"
+> {
   /** Visible label text — linked to the input via htmlFor/id for a11y. */
   label?: string;
   /** Additional descriptive text shown below the field. Turns red when error=true. */
@@ -27,19 +29,19 @@ export interface InputProps
 const inputSizeClasses: Record<InputSize, string> = {
   sm: "px-2.5 py-1 text-xs rounded",
   md: "px-3 py-2 text-sm rounded-md",
-  lg: "px-4 py-3 text-base rounded-lg",
+  lg: "px-4 py-3 text-base rounded-lg"
 };
 
 const labelSizeClasses: Record<InputSize, string> = {
   sm: "text-xs",
   md: "text-sm",
-  lg: "text-base",
+  lg: "text-base"
 };
 
 const helperSizeClasses: Record<InputSize, string> = {
   sm: "text-[10px]",
   md: "text-xs",
-  lg: "text-sm",
+  lg: "text-sm"
 };
 
 /**
@@ -60,7 +62,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     className = "",
     ...rest
   },
-  ref,
+  ref
 ) {
   const autoId = useId();
   const inputId = providedId ?? autoId;
@@ -101,7 +103,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
             : error
               ? "border-danger focus:border-danger focus:ring-danger"
               : "border-stroke hover:border-stroke-strong focus:border-brand focus:ring-brand",
-          className,
+          className
         ]
           .filter(Boolean)
           .join(" ")}
@@ -112,10 +114,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         <p
           id={helperId}
           role={error ? "alert" : undefined}
-          className={[
-            error ? "text-danger" : "text-content-muted",
-            helperSizeClasses[size],
-          ].join(" ")}
+          className={[error ? "text-danger" : "text-content-muted", helperSizeClasses[size]].join(
+            " "
+          )}
         >
           {helperText}
         </p>

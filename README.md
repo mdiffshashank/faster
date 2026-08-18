@@ -8,11 +8,11 @@
 
 ## Components
 
-| Component | Description |
-|---|---|
-| `Button` | Primary / Secondary / Ghost, md / lg sizes, aria-disabled |
-| `Input` | Label, helper text, error state, disabled, controlled + uncontrolled |
-| `Dialog` | Focus trap, ESC close, backdrop, aria-modal, header / body / footer |
+| Component | Description                                                          |
+| --------- | -------------------------------------------------------------------- |
+| `Button`  | Primary / Secondary / Ghost, md / lg sizes, aria-disabled            |
+| `Input`   | Label, helper text, error state, disabled, controlled + uncontrolled |
+| `Dialog`  | Focus trap, ESC close, backdrop, aria-modal, header / body / footer  |
 
 ---
 
@@ -52,6 +52,7 @@ npm run storybook
 Opens at [http://localhost:6006](http://localhost:6006).
 
 Each component has:
+
 - Full **Docs** page with prop table (auto-generated from TypeScript)
 - Named stories for every variant / state
 - **Playground** story — use the Controls panel to tweak any prop live
@@ -69,6 +70,7 @@ npm test
 ```
 
 Tests cover:
+
 - Component rendering (all variants, sizes, states)
 - User interactions (click, type, keyboard navigation)
 - Accessibility attributes (aria-*, role, focus behaviour)
@@ -100,6 +102,7 @@ npm run lib:build
 ```
 
 This runs two steps:
+
 1. `tsc -p tsconfig.lib.json` — emits TypeScript declarations into `dist/types/`
 2. `vite build --config vite.lib.config.ts` — bundles ESM (`faster.es.js`) and CJS (`faster.cjs.js`) into `dist/`
 
@@ -128,11 +131,11 @@ import { Button, Input, Dialog } from "@faster/ui";
 
 All design tokens are extracted from the **TapTap Figma file** and defined as CSS custom properties.
 
-| Layer | File |
-|---|---|
-| Primitive tokens | `design/tokens/tokens.css` |
+| Layer                          | File                                |
+| ------------------------------ | ----------------------------------- |
+| Primitive tokens               | `design/tokens/tokens.css`          |
 | Semantic tokens (light + dark) | `design/tokens/semantic-tokens.css` |
-| Tailwind extension | `tailwind.config.ts` |
+| Tailwind extension             | `tailwind.config.ts`                |
 
 **Theme support:** Toggle dark mode by adding `class="dark"` to `<html>`. The `useTheme` hook in `src/hooks/useTheme.ts` manages this automatically with `localStorage` persistence.
 
