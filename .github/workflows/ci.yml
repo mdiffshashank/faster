@@ -11,51 +11,45 @@ permissions:
   id-token: write
 
 jobs:
+  # ────────────────────────────────────────────────────────────────────────────
+  # 1. CI: Verification & Testing
+  # ────────────────────────────────────────────────────────────────────────────
   ci:
-    name: Build, Test & Release
+    name: Run Tests & Verification
     runs-on: ubuntu-latest
 
     steps:
-      # ── 1. Checkout ──────────────────────────────────────────────────────────
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ── 2. Setup Node with NPM auth (needed for publish step) ───────────────
       - name: Setup Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          registry-url: "https://registry.npmjs.org"
           cache: "npm"
 
-      # ── 3. Install dependencies ───────────────────────────────────────────────
       - name: Install dependencies
         run: npm ci
 
-      # ── 4. Format & Lint ──────────────────────────────────────────────────────
       - name: Check formatting
         run: npm run format
 
       - name: Lint
         run: npm run lint
 
-      # ── 5. Type check ─────────────────────────────────────────────────────────
       - name: Type check
         run: npm run typecheck
 
-      # ── 6. Jest unit tests ───────────────────────────────────────────────────
       - name: Jest tests
         run: npm test
 
-      # ── 7. Cypress component tests ────────────────────────────────────────────
       - name: Cypress component tests
         uses: cypress-io/github-action@v6
         with:
           component: true
           browser: chrome
-          install: false # deps already installed above
+          install: false
 
-      # ── 7.5. Upload Cypress screenshots on failure ───────────────────────────
       - name: Upload Cypress screenshots on failure
         uses: actions/upload-artifact@v4
         if: failure()
@@ -64,21 +58,45 @@ jobs:
           path: cypress/screenshots
           if-no-files-found: ignore
 
-      # ── 8. Storybook build ────────────────────────────────────────────────────
-      - name: Build Storybook
+      - name: Smoke-build Storybook
         run: npm run storybook:build
 
-      # ── 9. Library build (ESM + CJS + .d.ts) ─────────────────────────────────
+      - name: Smoke-build library
+        run: npm run lib:build
+
+  # ────────────────────────────────────────────────────────────────────────────
+  # 2. CD: NPM Publish (Main branch only, dependent on CI passing)
+  # ────────────────────────────────────────────────────────────────────────────
+  publish-npm:
+    name: Publish to NPM
+    needs: ci
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Build library
         run: npm run lib:build
 
-      # ── 10. NPM publish (only on push to main) ────────────────────────────────
       - name: Publish to NPM
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+  # ────────────────────────────────────────────────────────────────────────────
+  # 3. CD: Deploy Storybook (Main branch only, dependent on CI passing)
+  # ────────────────────────────────────────────────────────────────────────────
   deploy-storybook:
     name: Deploy Storybook
     needs: ci
