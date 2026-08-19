@@ -10,7 +10,7 @@ const config: StorybookConfig = {
   },
   async viteFinal(config) {
     return mergeConfig(config, {
-      base: "./"
+      base: process.env.NODE_ENV === "production" ? "/faster/" : "/"
     });
   }
 };
