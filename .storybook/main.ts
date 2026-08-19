@@ -8,9 +8,9 @@ const config: StorybookConfig = {
   typescript: {
     reactDocgen: "react-docgen-typescript"
   },
-  async viteFinal(config) {
+  async viteFinal(config, { configType }) {
     return mergeConfig(config, {
-      base: process.env.NODE_ENV === "production" ? "/faster/" : "/"
+      base: configType === "PRODUCTION" ? "/faster/" : "/"
     });
   }
 };
