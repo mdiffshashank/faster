@@ -77,7 +77,7 @@ export function Dialog({ open, title, children, footer, size = "md", onClose }: 
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        className="absolute inset-0 bg-overlay-backdrop/50 dark:bg-overlay-backdrop/60 backdrop-blur-sm"
         aria-hidden="true"
         onClick={onClose}
         data-testid="dialog-backdrop"

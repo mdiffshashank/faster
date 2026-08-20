@@ -47,6 +47,10 @@ const config: Config = {
           bg: "var(--color-disabled-bg)",
           text: "var(--color-disabled-text)",
           border: "var(--color-disabled-border)"
+        },
+        // Overlays — bg-overlay-backdrop
+        overlay: {
+          backdrop: "var(--black-white-black)"
         }
       },
       boxShadow: {
