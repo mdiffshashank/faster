@@ -181,14 +181,15 @@
             </div>
           </div>
 
-          <div class="folder-tree">
-            <span class="comment"># Prompts Directory Structure</span> .github/prompts/ ├──
-            faster-scaffold-orchestrator.prompt.md ├──
-            phase-01-bootstrap-vite-react-ts-tailwind.prompt.md ├──
-            phase-02-required-configs.prompt.md ├── phase-03-generate-semantic-tokens.prompt.md ├──
-            phase-04-github-actions-ci-cd.prompt.md ├── phase-05-component-engineering.prompt.md └──
-            pr-readiness-acceptance-check.prompt.md
-          </div>
+          <pre class="folder-tree"><code><span class="comment"># Prompts Directory Structure</span>
+.github/prompts/
+├── faster-scaffold-orchestrator.prompt.md
+├── phase-01-bootstrap-vite-react-ts-tailwind.prompt.md
+├── phase-02-required-configs.prompt.md
+├── phase-03-generate-semantic-tokens.prompt.md
+├── phase-04-github-actions-ci-cd.prompt.md
+├── phase-05-component-engineering.prompt.md
+└── pr-readiness-acceptance-check.prompt.md</code></pre>
         </div>
       </section>
 
@@ -220,14 +221,35 @@
             </div>
           </div>
 
-          <div class="folder-tree">
-            <span class="comment"># Created Directory Structure After Phase 01</span> faster/ ├──
-            .github/ │ └── prompts/ │ ├── phase-01-bootstrap-vite-react-ts-tailwind.prompt.md │ └──
-            ... ├── doc/ │ └── adr/ │ ├── 0001-bootstrap-vite-react-ts.md │ └── ... ├── design/ │
-            └── tokens/ │ └── ... ├── src/ │ ├── components/ │ │ └── ... │ ├── styles/ │ │ └── ... │
-            ├── App.tsx │ ├── main.tsx │ ├── index.ts │ └── ... ├── package.json ├── vite.config.ts
-            ├── tsconfig.json ├── tsup.config.ts └── ...
-          </div>
+          <pre
+            class="folder-tree"
+          ><code><span class="comment"># Created Directory Structure After Phase 01</span>
+faster/
+├── .github/
+│   └── prompts/
+│       ├── phase-01-bootstrap-vite-react-ts-tailwind.prompt.md
+│       └── ...
+├── doc/
+│   └── adr/
+│       ├── 0001-bootstrap-vite-react-ts.md
+│       └── ...
+├── design/
+│   └── tokens/
+│       └── ...
+├── src/
+│   ├── components/
+│   │   └── ...
+│   ├── styles/
+│   │   └── ...
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── index.ts
+│   └── ...
+├── package.json
+├── vite.config.ts
+├── tsconfig.json
+├── tsup.config.ts
+└── ...</code></pre>
         </div>
       </section>
 
@@ -266,12 +288,21 @@
 .github/prompts/phase-02-required-configs.prompt.md</code></pre>
             </div>
 
-            <div class="folder-tree">
-              <span class="comment"># Configured Project Tooling</span> faster/ ├── .github/ │ └──
-              prompts/ │ └── phase-02-required-configs.prompt.md ├── .eslintrc.cjs ├── .prettierrc
-              ├── tsconfig.json ├── vite.config.ts ├── tsup.config.ts ├── tailwind.config.ts ├──
-              jest.config.ts ├── cypress.config.ts └── .storybook/ └── main.ts
-            </div>
+            <pre class="folder-tree"><code><span class="comment"># Configured Project Tooling</span>
+faster/
+├── .github/
+│   └── prompts/
+│       └── phase-02-required-configs.prompt.md
+├── .eslintrc.cjs
+├── .prettierrc
+├── tsconfig.json
+├── vite.config.ts
+├── tsup.config.ts
+├── tailwind.config.ts
+├── jest.config.ts
+├── cypress.config.ts
+└── .storybook/
+    └── main.ts</code></pre>
           </div>
         </div>
       </section>
@@ -316,11 +347,18 @@
 }</code></pre>
             </div>
 
-            <div class="folder-tree">
-              <span class="comment"># Tokens Output & Fetch Agent</span> .github/ └── agents/ └──
-              figma-design-fetch-agent.agent.md design/ ├── figma-design-spec.md ├──
-              figma-fetch-log.md └── tokens/ ├── tokens.json └── semantic-tokens.css
-            </div>
+            <pre
+              class="folder-tree"
+            ><code><span class="comment"># Tokens Output & Fetch Agent</span>
+.github/
+└── agents/
+    └── figma-design-fetch-agent.agent.md
+design/
+├── figma-design-spec.md
+├── figma-fetch-log.md
+└── tokens/
+    ├── tokens.json
+    └── semantic-tokens.css</code></pre>
           </div>
         </div>
       </section>
@@ -423,12 +461,24 @@
               </div>
             </div>
 
-            <div class="folder-tree">
-              <span class="comment"># Component & Test Layout</span> src/ ├── components/ │ ├──
-              Button/ │ │ ├── Button.tsx │ │ ├── Button.test.tsx │ │ └── index.ts │ └── index.ts ├──
-              stories/ │ ├── Button.stories.tsx │ └── ... cypress/ └── component/ ├── Button.cy.tsx
-              └── ... .github/ └── prompts/ &nbsp;&nbsp;└── phase-05-component-engineering.prompt.md
-            </div>
+            <pre class="folder-tree"><code><span class="comment"># Component & Test Layout</span>
+src/
+├── components/
+│   ├── Button/
+│   │   ├── Button.tsx
+│   │   ├── Button.test.tsx
+│   │   └── index.ts
+│   └── index.ts
+├── stories/
+│   ├── Button.stories.tsx
+│   └── ...
+cypress/
+└── component/
+    ├── Button.cy.tsx
+    └── ...
+.github/
+└── prompts/
+    └── phase-05-component-engineering.prompt.md</code></pre>
           </div>
         </div>
       </section>
