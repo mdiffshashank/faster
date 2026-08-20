@@ -15,6 +15,7 @@ Read and honor these files first:
 - [Phase 02](./phase-02-required-configs.prompt.md)
 - [Phase 03](./phase-03-generate-semantic-tokens.prompt.md)
 - [Phase 04](./phase-04-github-actions-ci-cd.prompt.md)
+- [Phase 05](./phase-05-component-engineering.prompt.md)
 
 Primary objective:
 

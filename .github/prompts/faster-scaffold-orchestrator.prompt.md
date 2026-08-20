@@ -14,6 +14,7 @@ Read and honor these files first:
 - [Phase 02](./phase-02-required-configs.prompt.md)
 - [Phase 03](./phase-03-generate-semantic-tokens.prompt.md)
 - [Phase 04](./phase-04-github-actions-ci-cd.prompt.md)
+- [Phase 05](./phase-05-component-engineering.prompt.md)
 - [Package manifest](../../package.json)
 
 Primary objective:
@@ -34,6 +35,7 @@ Phase entry criteria model:
 - Phase 02 ready when required tooling/config scripts are aligned with the stack and can run (TypeScript, ESLint/Prettier, Tailwind, Vite, Jest/RTL, Cypress, Storybook, and related required configs).
 - Phase 03 ready when semantic token structure exists and components can consume tokenized values.
 - Phase 04 ready when GitHub Actions workflow covers required gates and release flow.
+- Phase 05 ready when semantic tokens exist and tooling configs are healthy, enabling scalable component engineering (Button, Input, Dialog, or custom components) with Jest, Cypress, and Storybook coverage.
 
 Validation guidance:
 
