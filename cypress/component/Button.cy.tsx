@@ -55,7 +55,7 @@ describe("Button", () => {
 
   it("renders large size", () => {
     cy.mount(<Button size="lg">Large</Button>);
-    cy.get("button").should("have.class", "rounded-lg");
+    cy.get("button").should("have.class", "rounded-sm");
   });
 
   it("renders left icon", () => {

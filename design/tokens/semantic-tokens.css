@@ -3,7 +3,7 @@
 /* ─── Light theme (default) ─────────────────────────────────── */
 :root {
   /* Brand */
-  --color-bg-primary: var(--primary-600); /* #15C5CE */
+  --color-bg-primary: var(--primary-500); /* #15C5CE */
   --color-bg-primary-hover: var(--primary-500); /* #47CFD6 */
   --color-bg-primary-pressed: var(--primary-700); /* #00ABB6 */
   --color-bg-primary-subtle: var(--primary-100); /* #EEFCFC */

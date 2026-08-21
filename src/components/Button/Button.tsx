@@ -34,7 +34,7 @@ const sizeClasses = (isIconOnly: boolean, isLink: boolean) => {
   return {
     sm: isIconOnly ? "w-8 h-8 p-0" : "px-3 py-1.5 text-xs leading-none rounded gap-1",
     md: isIconOnly ? "w-10 h-10 p-0" : "px-4 py-2 text-sm leading-snug rounded-md gap-1.5",
-    lg: isIconOnly ? "w-12 h-12 p-0" : "px-6 py-3 text-base leading-normal rounded-lg gap-2"
+    lg: isIconOnly ? "w-12 h-12 p-0" : "px-6 py-3 text-base leading-normal rounded-sm gap-2"
   };
 };
 

@@ -94,7 +94,7 @@ describe("Button", () => {
 
     it("applies lg size class when size=lg", () => {
       render(<Button size="lg">Large</Button>);
-      expect(screen.getByRole("button")).toHaveClass("rounded-lg");
+      expect(screen.getByRole("button")).toHaveClass("rounded-sm");
       expect(screen.getByRole("button")).toHaveClass("px-6");
     });
   });

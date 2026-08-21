@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faster UI — Autonomous Agentic Engineering Presentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Top Right Fullscreen Icon Button -->
+    <button
+      class="fullscreen-btn"
+      id="fullscreen-btn"
+      aria-label="Toggle Fullscreen"
+      title="Toggle Fullscreen"
+    >
+      <svg viewBox="0 0 24 24">
+        <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
+      </svg>
+    </button>
+
+    <main class="deck-viewport">
+      <!-- SLIDE 01: Input & Goal -->
+      <section class="slide">
+        <div class="slide-header">
+          <h1 class="slide-title">Building Faster UI</h1>
+          <p class="slide-subtitle">
+            Delivering a production React 19 UI design library from requirement brief to release.
+          </p>
+        </div>
+        <div class="slide-body">
+          <div class="two-points-container">
+            <div class="point-item">
+              <span class="point-label">Input:</span> <code>./doc/faster-lib-requirements.md</code>
+            </div>
+            <div class="point-item">
+              <span class="point-label">Goal:</span>
+              <ul style="padding-left: 40px">
+                <li>Architect a production-ready <b>React UI</b> library.</li>
+                <li>Integrate <b>Tailwind CSS</b> synced with <b>Figma tokens.</b></li>
+                <li>Enforce zero hardcoded color literals.</li>
+                <li>Ensure <b>100% WCAG accessibility</b> compliance.</li>
+                <li>Write test cases using <b>Jest</b> &amp; <b>RTL</b>.</li>
+                <li>Implement testing suites with <b>Cypress</b>.</li>
+                <li>CI/CD via Github Actions , deployment of <b>Storybook</b> & publish.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 02: Task Decomposition -->
+      <section class="slide">
+        <div class="slide-header">
+          <h2 class="slide-title">Task Decomposition</h2>
+          <p class="slide-subtitle">Orchestrator-driven 7-phase vertical execution workflow.</p>
+        </div>
+        <div class="slide-body">
+          <div class="clean-timeline">
+            <div class="timeline-step">
+              <span class="timeline-num">00</span>
+              <div class="timeline-content">
+                <strong>System Guardrails & Governance</strong> — Non-negotiable rules & ADR logging
+              </div>
+            </div>
+            <div class="timeline-step">
+              <span class="timeline-num">00</span>
+              <div class="timeline-content">
+                <strong>Prompt Architecture & Strategy</strong> — Deterministic versioned prompt
+                execution
+              </div>
+            </div>
+            <div class="timeline-step">
+              <span class="timeline-num">01</span>
+              <div class="timeline-content">
+                <strong>Foundation & Directory Bootstrap</strong> — Vite, React 19, TypeScript, and
+                Tailwind
+              </div>
+            </div>
+            <div class="timeline-step">
+              <span class="timeline-num">02</span>
+              <div class="timeline-content">
+                <strong>Required Tooling & Project Config</strong> — Tooling hardening & config
+                alignment
+              </div>
+            </div>
+            <div class="timeline-step">
+              <span class="timeline-num">03</span>
+              <div class="timeline-content">
+                <strong>Figma MCP Token Sync</strong> — Automated token fetching & CSS compilation
+              </div>
+            </div>
+            <div class="timeline-step">
+              <span class="timeline-num">04</span>
+              <div class="timeline-content">
+                <strong>GitHub Actions CI/CD Pipeline</strong> — Automated quality gates, release
+                &amp; rollback
+              </div>
+            </div>
+            <div class="timeline-step">
+              <span class="timeline-num">05</span>
+              <div class="timeline-content">
+                <strong>Accessible Component Engineering</strong> — Button, Input, and Dialog
+                primitives
+              </div>
+            </div>
+            <div class="timeline-step">
+              <span class="timeline-num">06</span>
+              <div class="timeline-content">
+                <strong>Deployment & NPM Release</strong> — Live Storybook playground & published
+                package
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 03: System Guardrails -->
+      <section class="slide">
+        <div class="slide-header">
+          <div class="phase-tag">Phase : 00</div>
+          <h2 class="slide-title">System Guardrails</h2>
+          <p class="slide-subtitle">
+            Pre-flight policies enforcing non-negotiable architectural standards.
+          </p>
+        </div>
+        <div class="slide-body">
+          <div class="clean-list">
+            <div class="list-item">
+              <span class="item-num">01</span>
+              <span
+                ><strong>Policy Engine</strong> — Zero raw hex color literals & mandatory WAI-ARIA
+                roles.</span
+              >
+            </div>
+            <div class="list-item">
+              <span class="item-num">02</span>
+              <span
+                ><strong>Architecture Decision Records</strong> — Mandatory numbered ADR logs for
+                all tooling choices.</span
+              >
+            </div>
+          </div>
+
+          <pre><code><span class="comment"># System Guardrails Policy</span>
+<span class="keyword">Rule 1:</span> Zero hardcoded hex color literals in JSX / CSS. Use CSS variable tokens.
+<span class="keyword">Rule 2:</span> All interactive components MUST implement WAI-ARIA roles & focus traps.
+<span class="keyword">Rule 3:</span> Every architectural decision MUST generate a numbered ADR log.</code></pre>
+        </div>
+      </section>
+
+      <!-- SLIDE 04: Prompt Architecture -->
+      <section class="slide">
+        <div class="slide-header">
+          <div class="phase-tag">Phase : 00</div>
+          <h2 class="slide-title">Prompt Architecture</h2>
+          <p class="slide-subtitle">Versioned prompts as code executing deterministically.</p>
+        </div>
+        <div class="slide-body">
+          <div class="clean-list">
+            <div class="list-item">
+              <span class="item-num">01</span>
+              <span
+                ><strong>System Prompt Isolation</strong> — Decouples prompt instructions from core
+                application code.</span
+              >
+            </div>
+            <div class="list-item">
+              <span class="item-num">02</span>
+              <span
+                ><strong>Deterministic Execution</strong> — Version-controlled prompt templates run
+                reproducibly in CI/CD.</span
+              >
+            </div>
+          </div>
+
+          <pre class="folder-tree"><code><span class="comment"># Prompts Directory Structure</span>
+.github/prompts/
+├── faster-scaffold-orchestrator.prompt.md
+├── phase-01-bootstrap-vite-react-ts-tailwind.prompt.md
+├── phase-02-required-configs.prompt.md
+├── phase-03-generate-semantic-tokens.prompt.md
+├── phase-04-github-actions-ci-cd.prompt.md
+├── phase-05-component-engineering.prompt.md
+└── pr-readiness-acceptance-check.prompt.md</code></pre>
+        </div>
+      </section>
+
+      <!-- SLIDE 05: Foundation Bootstrap -->
+      <section class="slide">
+        <div class="slide-header">
+          <div class="phase-tag">Phase : 01</div>
+          <h2 class="slide-title">Foundation Bootstrap</h2>
+          <p class="slide-subtitle">
+            Vite, React 19, TypeScript, and Tailwind baseline scaffolding.
+          </p>
+        </div>
+        <div class="slide-body">
+          <div class="clean-list">
+            <div class="list-item">
+              <span class="item-num">01</span>
+              <span
+                ><strong>Prompt Execution</strong> — Executes
+                <code>phase-01-bootstrap-vite-react-ts-tailwind.prompt.md</code> for workspace
+                initialization.</span
+              >
+            </div>
+            <div class="list-item">
+              <span class="item-num">02</span>
+              <span
+                ><strong>Dependency Scaffolding</strong> — Installs React 19, TypeScript, Tailwind,
+                Jest/RTL, Cypress, and Storybook dev tools.</span
+              >
+            </div>
+          </div>
+
+          <pre
+            class="folder-tree"
+          ><code><span class="comment"># Created Directory Structure After Phase 01</span>
+faster/
+├── .github/
+│   └── prompts/
+│       ├── phase-01-bootstrap-vite-react-ts-tailwind.prompt.md
+│       └── ...
+├── doc/
+│   └── adr/
+│       ├── 0001-bootstrap-vite-react-ts.md
+│       └── ...
+├── design/
+│   └── tokens/
+│       └── ...
+├── src/
+│   ├── components/
+│   │   └── ...
+│   ├── styles/
+│   │   └── ...
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── index.ts
+│   └── ...
+├── package.json
+├── vite.config.ts
+├── tsconfig.json
+├── tsup.config.ts
+└── ...</code></pre>
+        </div>
+      </section>
+
+      <!-- SLIDE 06: Required Tooling & Config -->
+      <section class="slide">
+        <div class="slide-header">
+          <div class="phase-tag">Phase : 02</div>
+          <h2 class="slide-title">Required Tooling &amp; Config</h2>
+          <p class="slide-subtitle">
+            Project hardening via <code>.github/prompts/phase-02-required-configs.prompt.md</code>.
+          </p>
+        </div>
+        <div class="slide-body">
+          <div class="split-layout">
+            <div style="display: flex; flex-direction: column; gap: 1rem">
+              <div class="clean-list">
+                <div class="list-item">
+                  <span class="item-num">01</span>
+                  <span
+                    ><strong>TypeScript &amp; Vite Hardening</strong> — Strict type-checking in
+                    <code>tsconfig.json</code> and dual ESM/CJS bundling in
+                    <code>tsup.config.ts</code> / <code>vite.config.ts</code>.</span
+                  >
+                </div>
+                <div class="list-item">
+                  <span class="item-num">02</span>
+                  <span
+                    ><strong>Tailwind &amp; Quality Tooling</strong> — Token mapping in
+                    <code>tailwind.config.ts</code>, Prettier, ESLint, Jest/RTL, Cypress &amp;
+                    Storybook wiring.</span
+                  >
+                </div>
+              </div>
+
+              <pre><code><span class="comment"># Phase 02 Execution Prompt</span>
+.github/prompts/phase-02-required-configs.prompt.md</code></pre>
+            </div>
+
+            <pre class="folder-tree"><code><span class="comment"># Configured Project Tooling</span>
+faster/
+├── .github/
+│   └── prompts/
+│       └── phase-02-required-configs.prompt.md
+├── .eslintrc.cjs
+├── .prettierrc
+├── tsconfig.json
+├── vite.config.ts
+├── tsup.config.ts
+├── tailwind.config.ts
+├── jest.config.ts
+├── cypress.config.ts
+└── .storybook/
+    └── main.ts</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 07: Figma Token Sync -->
+      <section class="slide">
+        <div class="slide-header">
+          <div class="phase-tag">Phase : 03</div>
+          <h2 class="slide-title">Figma Token Sync</h2>
+          <p class="slide-subtitle">Automated design token fetching via Model Context Protocol.</p>
+        </div>
+        <div class="slide-body">
+          <div class="split-layout">
+            <div style="display: flex; flex-direction: column; gap: 1rem">
+              <div class="clean-list">
+                <div class="list-item">
+                  <span class="item-num">01</span>
+                  <span
+                    ><strong>Figma Fetch Agent</strong> — Uses
+                    <code>.github/agents/figma-design-fetch-agent.agent.md</code> to fetch design
+                    tokens &amp; specs.</span
+                  >
+                </div>
+                <div class="list-item">
+                  <span class="item-num">02</span>
+                  <span
+                    ><strong>MCP Protocol Sync</strong> — Connects via stdio to
+                    <code>figma-developer-mcp</code> server using local API key.</span
+                  >
+                </div>
+              </div>
+
+              <pre><code><span class="comment">// Shared VS Code MCP Server Config (.vscode/mcp.json)</span>
+{
+  <span class="keyword">"servers"</span>: {
+    <span class="keyword">"figma"</span>: {
+      <span class="keyword">"command"</span>: <span class="string">"npx"</span>,
+      <span class="keyword">"args"</span>: [<span class="string">"-y"</span>, <span class="string">"figma-developer-mcp"</span>, <span class="string">"--stdio"</span>],
+      <span class="keyword">"envFile"</span>: <span class="string">"${workspaceFolder}/.env.local"</span>
+    }
+  }
+}</code></pre>
+            </div>
+
+            <pre
+              class="folder-tree"
+            ><code><span class="comment"># Tokens Output & Fetch Agent</span>
+.github/
+└── agents/
+    └── figma-design-fetch-agent.agent.md
+design/
+├── figma-design-spec.md
+├── figma-fetch-log.md
+└── tokens/
+    ├── tokens.json
+    └── semantic-tokens.css</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 08: GitHub Actions CI/CD -->
+      <section class="slide">
+        <div class="slide-header">
+          <div class="phase-tag">Phase : 04</div>
+          <h2 class="slide-title">GitHub Actions CI/CD Pipeline</h2>
+          <p class="slide-subtitle">
+            Workflow automation configured via
+            <code>.github/prompts/phase-04-github-actions-ci-cd.prompt.md</code>.
+          </p>
+        </div>
+        <div class="slide-body">
+          <div class="split-layout">
+            <div style="display: flex; flex-direction: column; gap: 1rem">
+              <div class="clean-list">
+                <div class="list-item">
+                  <span class="item-num">01</span>
+                  <span
+                    ><strong>CI Verification (job: ci)</strong> — Runs 10 sequential quality gate
+                    steps covering formatting, linting, type checks, unit/component tests &amp;
+                    smoke builds.</span
+                  >
+                </div>
+                <div class="list-item">
+                  <span class="item-num">02</span>
+                  <span
+                    ><strong>CD Release (jobs: publish-npm, deploy-storybook)</strong> —
+                    Automatically publishes package to NPM and deploys live Storybook playground to
+                    GitHub Pages.</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <pre><code><span class="comment"># .github/workflows/ci.yml Steps</span>
+<span class="keyword">jobs:</span>
+  <span class="keyword">ci:</span>
+    <span class="keyword">steps:</span>
+      - Checkout repository
+      - Setup Node.js 20
+      - Install dependencies
+      - Check formatting
+      - Lint
+      - Type check
+      - Jest tests
+      - Cypress component tests
+      - Smoke-build Storybook
+      - Smoke-build library
+  <span class="keyword">publish-npm:</span>
+    <span class="keyword">steps:</span>
+      - Build &amp; Publish to NPM
+  <span class="keyword">deploy-storybook:</span>
+    <span class="keyword">steps:</span>
+      - Build &amp; Deploy to GitHub Pages</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 09: Component Engineering -->
+      <section class="slide">
+        <div class="slide-header">
+          <div class="phase-tag">Phase : 05</div>
+          <h2 class="slide-title">Accessible Component Engineering</h2>
+          <p class="slide-subtitle">
+            Tokenized component engineering executed via
+            <code><b>.github/prompts/phase-05-component-engineering.prompt.md</b></code
+            >.
+          </p>
+        </div>
+        <div class="slide-body">
+          <div class="split-layout">
+            <div style="display: flex; flex-direction: column; gap: 1rem">
+              <div class="clean-list">
+                <div class="list-item">
+                  <span class="item-num">01</span>
+                  <span
+                    ><strong>Prompt Execution</strong> — Orchestrated via
+                    <b><code>phase-05-component-engineering.prompt.md</code> </b>to engineer
+                    tokenized components.</span
+                  >
+                </div>
+                <div class="list-item">
+                  <span class="item-num">02</span>
+                  <span
+                    ><strong>AST Guardrail Audit</strong> — Enforces 100% tokenized CSS variables
+                    with zero raw hex color overrides.</span
+                  >
+                </div>
+                <div class="list-item">
+                  <span class="item-num">03</span>
+                  <span
+                    ><strong>Accessibility &amp; Test Suite</strong> — WAI-ARIA focus traps,
+                    keyboard navigation, Jest unit tests, Cypress component tests, and Storybook
+                    stories.</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <pre class="folder-tree"><code><span class="comment"># Component & Test Layout</span>
+src/
+├── components/
+│   ├── Button/
+│   │   ├── Button.tsx
+│   │   ├── Button.test.tsx
+│   │   └── index.ts
+│   └── index.ts
+├── stories/
+│   ├── Button.stories.tsx
+│   └── ...
+cypress/
+└── component/
+    ├── Button.cy.tsx
+    └── ...
+.github/
+└── prompts/
+    └── phase-05-component-engineering.prompt.md</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: Deployment & Links -->
+      <section class="slide">
+        <div class="slide-header">
+          <div class="phase-tag">Phase : 06</div>
+          <h2 class="slide-title">Deployment & Links</h2>
+          <p class="slide-subtitle">
+            Official repository, live Storybook playground, and published NPM package.
+          </p>
+        </div>
+        <div class="slide-body">
+          <div class="clean-links">
+            <a
+              href="https://github.com/mdiffshashank/faster"
+              target="_blank"
+              class="text-link-item"
+            >
+              <span class="link-label">GitHub Repository:</span>
+              https://github.com/mdiffshashank/faster
+            </a>
+            <a
+              href="https://mdiffshashank.github.io/faster/"
+              target="_blank"
+              class="text-link-item"
+            >
+              <span class="link-label">Live Playground:</span>
+              https://mdiffshashank.github.io/faster/
+            </a>
+            <a
+              href="https://www.npmjs.com/package/@mdiffshashank/faster-ui"
+              target="_blank"
+              class="link-card-legacy"
+            >
+              <span class="link-label">NPM Package:</span>
+              https://www.npmjs.com/package/@mdiffshashank/faster-ui
+            </a>
+          </div>
+
+          <pre><code><span class="comment"># Installation & Usage</span>
+npm install @mdiffshashank/faster-ui react react-dom
+<span class="keyword">import</span> { Button, Input, Dialog } <span class="keyword">from</span> <span class="string">"@mdiffshashank/faster-ui"</span>;</code></pre>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Right Page Counter -->
+    <div class="page-number" id="page-number">1 / 10</div>
+
+    <script src="deck.js"></script>
+  </body>
+</html>
